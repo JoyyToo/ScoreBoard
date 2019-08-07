@@ -2,23 +2,15 @@
 // react doesn't touch actual dom directly, it just managers what get rendered to the DOM
 // it is renders job to interpret and create elements
 
-const title = React.createElement(
-  'h1', // type
-  {id: 'main-title', title: 'This is a title.'}, // object
-   'My first react element!' // content/children
-);
+const name = "Joy";
 
-const desc = React.createElement(
-  'p',
-  null,
-  'I just learnt how to create a react node and render it to a DOM'
-);
+const desc = "I just learnt how to create a react node and render it to a DOM";
 
-const header = React.createElement(
-  'header',
-  null,
-  title,
-  desc
+const header = (
+  <header>
+    <h1> {name}'s First react Element! </h1>
+    <p> {desc} </p>
+  </header>
 );
 
 ReactDOM.render(
