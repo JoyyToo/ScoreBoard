@@ -2,18 +2,47 @@
 // react doesn't touch actual dom directly, it just managers what get rendered to the DOM
 // it is renders job to interpret and create elements
 
-const name = "Joy";
+const Header = () => {
+  return (
+    <header>
+      <h1>ScoreBoard</h1>
+      <span className="stats">Players: 1</span>
+    </header>
+  );
+};
 
-const desc = "I just learnt how to create a react node and render it to a DOM";
+const Player = () => {
+  return (
+    <div className="player">
+      <span className="player-name">
+        Joy
+      </span>
 
-const header = (
-  <header>
-    <h1> {name}'s First react Element! </h1>
-    <p> {desc} </p>
-  </header>
-);
+      <Counter />
+    </div>
+  )
+};
+
+const Counter = () => {
+  return (
+    <div className="counter">
+      <button className="counter-action decrement"> - </button>
+      <span className="counter-score">35</span>
+      <button className="counter-action increment"> + </button>
+    </div>
+  )
+};
+
+const App = () => {
+  return (
+    <div className="scoreboard">
+      <Header/>
+      <Player/>
+    </div>
+  );
+};
 
 ReactDOM.render(
-  header, // element to render
+  <App />, // element to render
   document.getElementById('root')// actual html element you want to update/render
 ); // creates and updates DOM, connects react to the DOM
